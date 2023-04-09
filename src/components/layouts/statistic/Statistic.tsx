@@ -6,26 +6,26 @@ const Statistic: FC = () => {
 			<h2 className='text-4xl mb-16'>Биздин айылда</h2>
 			<div className='flex justify-between'>
 				<div className='w-1/5'>
-					<p className='text-4xl'>
-						99<span className='text-blue-400'>%</span>{' '}
+					<p className='text-4xl font-bold'>
+					18800
 					</p>
-					<p className='text-2xl'>Customer satisfaction</p>
+					<p className='text-2xl'>Туруктуу калктын саны</p>
 				</div>
 				<div className='w-1/5'>
-					<p className='text-4xl'>32000</p>
-					<p className='text-2xl'>Адам</p>
+					<p className='text-4xl font-bold'>7</p>
+					<p className='text-2xl'>Айылдардын саны</p>
 				</div>
 				<div className='w-1/5'>
-					<p className='text-4xl'>
-						125<span className='text-blue-400'>+</span>
+					<p className='text-4xl font-bold'>
+					4191200км2
 					</p>
-					<p className='text-2xl'>Team members</p>
+					<p className='text-2xl '>Жалпы территориясы</p>
 				</div>
 				<div className='w-1/5'>
-					<p className='text-4xl'>
-						240<span className='text-blue-400'>%</span>
+					<p className='text-4xl font-bold'>
+					11
 					</p>
-					<p className='text-2xl'>Company growth</p>
+					<p className='text-2xl'>Атайын орто билим берүү</p>
 				</div>
 			</div>
 		</div>

@@ -15,7 +15,7 @@ const Header: FC = () => {
 
 	return (
 		<div> 
-			<header className='flex items-center w-full pt-12 px-24 justify-center text-lg'>
+			<header className='flex items-center w-full pt-12 px-24 justify-center text-lg pb-8'>
 				<div className='mr-8'>
 					<Image src='/logo.png' alt='' width={67} height={67}/>
 				</div>

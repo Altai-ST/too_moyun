@@ -3,7 +3,7 @@ import { IGalleryData } from '@/interfaces/gallery.interface'
 import { ICards } from '@/interfaces/news.interface'
 import { GalleryService } from '@/services/galleryData.service'
 import { NewsService } from '@/services/newsData.service'
-import { GetServerSideProps, NextPage } from 'next'
+import { NextPage } from 'next'
 
 
 const HomePage: NextPage<ICards & IGalleryData> =(props)=>{
@@ -11,8 +11,8 @@ const HomePage: NextPage<ICards & IGalleryData> =(props)=>{
 }
 
 export async function getServerSideProps() {
-  const cards = await NewsService.getSix()
-  const gallery = await GalleryService.getGallery()
+  const cards = await NewsService.getSix(1,6)
+  const gallery = await GalleryService.getGallery(1,4)
   
   return {
     props: {cards, gallery},

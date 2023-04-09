@@ -1,7 +1,7 @@
 import Cattle from '@/components/screens/cattle/Cattle'
-import { FC } from 'react'
+import { NextPage } from 'next'
 
-const cattle: FC = () => {
+const cattle: NextPage = () => {
 	return <div>
 		<Cattle/>
 	</div>

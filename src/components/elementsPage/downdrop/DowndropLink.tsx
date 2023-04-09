@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { URL, Url } from 'url'
 
 const DowndropLink: FC = () => {
 	const router = useRouter()
