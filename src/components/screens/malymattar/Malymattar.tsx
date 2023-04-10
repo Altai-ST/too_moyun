@@ -37,7 +37,7 @@ const Malymattar: FC = () => {
 					жонундо кененирээк билип алсанар болот.
 				</p>
 			</div>
-			<div>
+			<div className='mx-32'>
 				<CardNews/>
 			</div>
 		</Layout>
