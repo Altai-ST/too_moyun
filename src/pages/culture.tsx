@@ -1,10 +1,12 @@
-import Culture from '@/components/screens/culture/culture'
+import Culture from '@/components/screens/culture/Culture'
 import { NextPage } from 'next'
 
-const culture: NextPage = () => {
-	return <>
-		<Culture/>
-	</>
+const СulturePage: NextPage = () => {
+	return (
+		<>
+			<Culture />
+		</>
+	)
 }
 
-export default culture
+export default СulturePage

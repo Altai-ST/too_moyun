@@ -14,7 +14,7 @@ const DowndropLink: FC = () => {
 					<option selected disabled>Биз жонундо</option>
 					<option value='/cattle'>Айыл чарбасы</option>
 					<option value='/culture'>Маднияты</option>
-					<option value='/address'>Дареги</option>
+					<option value='/map'>Дареги</option>
 				</select>
 			</div>
 		</div>
