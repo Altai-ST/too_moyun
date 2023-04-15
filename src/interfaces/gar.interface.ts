@@ -1,11 +1,12 @@
 export interface IResult{
 	id: number
-	photo: string
-	description: string
+	img: string
+	title: String
+	text: String
 }
 
 
-export interface IGallery{
+export interface IGar{
 	count: Number
 	next: Number
 	pervious: Number
@@ -13,6 +14,6 @@ export interface IGallery{
 }
 
 
-export interface IGalleryData{
-	gallery: IGallery
+export interface ICardGar{
+	cards: IGar
 }

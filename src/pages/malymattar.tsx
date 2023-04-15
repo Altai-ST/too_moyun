@@ -12,7 +12,6 @@ const MalymattarPage: NextPage<ICardsData> = (props) => {
 
 export async function getServerSideProps() {
   const cardNews = await CardNewsService.getCardNews(1,6)
-  
   return {
     props: {cardNews},
   }

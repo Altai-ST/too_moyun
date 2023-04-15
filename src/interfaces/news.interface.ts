@@ -1,4 +1,5 @@
 export interface IResult{
+	id: number
 	img: string
 	title: String
 	text: String

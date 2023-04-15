@@ -1,8 +1,9 @@
 import CommonInfo from '@/components/screens/commonInfo/CommonInfo'
+import { CommonInfoContainer } from '@/interfaces/common-info.interface'
 import { CommonInfoService } from '@/services/commonInfo.service'
 import { NextPage } from 'next'
 
-const CommonInfoPage: NextPage = (props) => {
+const CommonInfoPage: NextPage<CommonInfoContainer> = (props) => {
 	return <div>
 			<CommonInfo commonInfo={props.commonInfo}/>
 	</div>

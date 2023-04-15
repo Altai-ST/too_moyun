@@ -2,11 +2,13 @@ import Gallery from '@/components/layouts/gallery/Gallery'
 import Layout from '@/components/layouts/Layout'
 import News from '@/components/layouts/news/News'
 import Statistic from '@/components/layouts/statistic/Statistic'
+import { RootState } from '@/GlobalRedux/store'
 import {IGalleryData } from '@/interfaces/gallery.interface'
 import { ICards } from '@/interfaces/news.interface'
 import { Carousel } from 'flowbite-react'
 import Image from 'next/image'
 import React, { FC } from 'react'
+import { useSelector } from 'react-redux'
 
 const Home: FC<ICards & IGalleryData> = ({cards, gallery}) => {
 	return (
@@ -27,6 +29,6 @@ const Home: FC<ICards & IGalleryData> = ({cards, gallery}) => {
 			<Statistic/>
 		</Layout>
 	)
-}
+	}
 
 export default Home

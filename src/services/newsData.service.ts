@@ -7,7 +7,7 @@ import axios from 'axios';
 
 export const NewsService = {
 	async getSix(page: Number, page_size:Number){
-		const { data } = await axios.get<INews[]>(`https://aimesh777.pythonanywhere.com/news/?page=${page}&page_size=${page_size}`)	
+		const { data } = await axios.get<INews[]>(`http://92.255.111.47/news/?page=${page}&page_size=${page_size}`)	
 		return data;
 	}
 }

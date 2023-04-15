@@ -1,21 +1,21 @@
 
-import NewsScreen from '@/components/screens/news/NewsScreen'
-import { ICards } from '@/interfaces/news.interface'
-import { NewsService } from '@/services/newsData.service'
+import GarScreen from '@/components/screens/news/GarScreen'
+import { ICardGar, IGar } from '@/interfaces/gar.interface'
+import { GarService } from '@/services/gar.service'
 import { NextPage } from 'next'
 
-const NewsPage: NextPage<ICards> =(props) =>{
+const NewsPage: NextPage<ICardGar> =(props) =>{
 	return <div>
-		<NewsScreen cards={props.cards}/>
+		<GarScreen cards={props.cards}/>
 	</div>
 }
 
 
-export async function getServerSideProps() {
-  const cards = await NewsService.getSix(1,6)
-  
+export async function getStaticProps() {
+  const cards = await GarService.getGarCards(1,6)
   return {
     props: {cards},
+    revalidate: 10,
   }
 }
 export default NewsPage
