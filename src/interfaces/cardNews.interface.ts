@@ -1,6 +1,17 @@
-export interface ICardNews{
+export interface IResult{
 	img: string
-	title: string
-	description: string
-	url:string
+	text: string
+}
+
+
+export interface ICardNews{
+	count: Number
+	next: Number
+	pervious: Number
+	results: IResult[]
+}
+
+
+export interface ICardsData{
+	cardNews: ICardNews
 }

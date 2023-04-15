@@ -26,7 +26,7 @@ const Header: FC = () => {
 					<DowndropLink/>
 					<Link
 						href='/news'
-						className={linkStyle}
+						className={pathname === '/news' ? linkStyleActive : linkStyle}
 					>
 						Жарыялар
 					</Link>
@@ -38,7 +38,7 @@ const Header: FC = () => {
 					</Link>
 					<Link
 						href='/malymattar'
-						className={linkStyle}
+						className={pathname === '/malymattar' ? linkStyleActive : linkStyle}
 					>
 						Маалытматтар
 					</Link>
@@ -50,7 +50,7 @@ const Header: FC = () => {
 					</Link>
 					
 					<Link
-						href='/gallery'
+						href='/photoGallery'
 						className={linkStyle}
 					>
 						Фотогалерея

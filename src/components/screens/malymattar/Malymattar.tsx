@@ -1,31 +1,10 @@
-import CardNews from '@/components/elementsPage/cardNews/CardNews'
 import Layout from '@/components/layouts/Layout'
+import { ICardNews, ICardsData } from '@/interfaces/cardNews.interface'
+import Image from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 
-const Malymattar: FC = () => {
-
-	const card1 = [{
-		img: 'cardNews1.png',
-		title: 'Аналитикалык маалымат.',
-		description: 'Географиялык жайгашкан жери, климаты',
-		url:'/edu'
-	},{
-		img: 'cardNews1.png',
-		title: 'Аналитикалык маалымат.',
-		description: 'Географиялык жайгашкан жери, климаты',
-		url:'/edu'
-	},{
-		img: 'cardNews1.png',
-		title: 'Аналитикалык маалымат.',
-		description: 'Географиялык жайгашкан жери, климаты',
-		url:'/edu'
-	},{
-		img: 'cardNews1.png',
-		title: 'Аналитикалык маалымат.',
-		description: 'Географиялык жайгашкан жери, климаты',
-		url:'/edu'
-	}]
-
+const Malymattar: FC<ICardsData> = ({ cardNews }) => {
 	return (
 		<Layout>
 			<div className='flex flex-col items-center mb-16'>
@@ -37,8 +16,22 @@ const Malymattar: FC = () => {
 					жонундо кененирээк билип алсанар болот.
 				</p>
 			</div>
-			<div className='mx-32'>
-				<CardNews/>
+			<div className='mx-32 flex flex-wrap justify-between pl-10'>
+				{cardNews.results.map(el => {
+					return (
+						<div className='flex flex-col px-10 text-white w-555 h-500 rounded-lg justify-center relative pt-32'>
+							<div className='absolute inset-0'>
+								<Image src={el.img} alt='' width={500} height={500} />
+							</div>
+							<div className='w-500 h-450 bg-black opacity-50 z-9 absolute inset-0 rounded-2xl'></div>
+							<div className='flex flex-col justify-center mb-24 h-1/4 z-10 relative'>
+								<h1 className='text-3xl font-bold'>{el.text}</h1>
+								{/* <p className='text-lg '>Географиялык жайгашкан жери, климаты</p> */}
+							</div>
+							<Link className='z-10' href='/commonInfo'>Кенен билүү</Link>
+						</div>
+					)
+				})}
 			</div>
 		</Layout>
 	)

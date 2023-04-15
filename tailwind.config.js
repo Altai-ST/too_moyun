@@ -18,8 +18,8 @@ module.exports = {
         'cardColor':'#5D5A88',
         'newsColor':'#9795B5',
         'statisticBg':'#EA526F',
-        'footerBg':'#4392F1'
-
+        'footerBg':'#4392F1',
+        'commonInfo':'#BCBACD'
       },
       width: {
         '1000': '1000px',
@@ -29,14 +29,23 @@ module.exports = {
         '600':'600px',
         '555':'555px',
         '500':'500px',
-        
+        '28p':'31%',
+        '334':'334px',
+        '23p':'23%',
+        '45%':'48%'
       },
       height:{
         '600': '600px',
         '670':'670px',
         '500':'500px',
-        '450':'457px'
+        '450':'457px',
+        '540':'540px',
+        '300':'300px',
+        '284':'284px'
       },
+      screens: {
+        'mobile':'500px'
+      }
     },
   },
   plugins: [

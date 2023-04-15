@@ -11,6 +11,7 @@ const HomePage: NextPage<ICards & IGalleryData> =(props)=>{
 }
 
 export async function getServerSideProps() {
+  
   const cards = await NewsService.getSix(1,6)
   const gallery = await GalleryService.getGallery(1,4)
   
