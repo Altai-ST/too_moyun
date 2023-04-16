@@ -6,6 +6,11 @@ export interface IResult{
 }
 
 
+export interface ICardSize{
+	page: number
+	pageSize:number
+}
+
 export interface INews{
 	count: Number
 	next: Number

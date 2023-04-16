@@ -1,11 +1,10 @@
-import Layout from '@/components/layouts/Layout'
 import { Carousel } from 'flowbite-react'
 import Image from 'next/image'
 import { FC } from 'react'
 
 const Culture: FC = () => {
 	return (
-		<Layout>
+		<>
 			<div className='bg-gray-200'>
 				<div className='flex justify-around'>
 					<div className='h-500 w-555 mb-16'>
@@ -32,7 +31,7 @@ const Culture: FC = () => {
 					</p>
 				</div>
 			</div>
-		</Layout>
+		</>
 	)
 }
 

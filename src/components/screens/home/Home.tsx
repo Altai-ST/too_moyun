@@ -1,20 +1,33 @@
+'use client';
+
 import Gallery from '@/components/layouts/gallery/Gallery'
 import Layout from '@/components/layouts/Layout'
 import News from '@/components/layouts/news/News'
 import Statistic from '@/components/layouts/statistic/Statistic'
-import { RootState } from '@/GlobalRedux/store'
-import {IGalleryData } from '@/interfaces/gallery.interface'
+import { getFirstCards, getFirstGallery } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
+import { getCards, getGallery } from '@/GlobalRedux/Features/pagination/paginationSlice'
+import { AppDispatch, RootState } from '@/GlobalRedux/store'
+import { IGalleryData } from '@/interfaces/gallery.interface'
 import { ICards } from '@/interfaces/news.interface'
 import { Carousel } from 'flowbite-react'
 import Image from 'next/image'
-import React, { FC } from 'react'
-import { useSelector } from 'react-redux'
+import React, { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-const Home: FC<ICards & IGalleryData> = ({cards, gallery}) => {
+const Home: FC = () => {
+	const cards = useSelector((state: RootState)=>state.firstData)
+
+	const dispatch = useDispatch<AppDispatch>()
+
+	useEffect(()=>{
+		dispatch(getFirstCards({page:1, pageSize:4}))
+		dispatch(getFirstGallery({page:1, pageSize:2}))
+	},[])
+	
 	return (
-		<Layout>
-			<div className='flex justify-center mt-10 '>
-				<div className='h-56 sm:h-64 xl:h-600 2xl:h-600 xl:w-1000 '>
+		<>
+			<div className='flex laptop:justify-center   justify-start laptop:mt-10 mt-0 '>
+				<div className='h-600 laptop:w-1000 w-full'>
 					<Carousel slideInterval={5000}>
 						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
 						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
@@ -24,11 +37,11 @@ const Home: FC<ICards & IGalleryData> = ({cards, gallery}) => {
 					</Carousel>
 				</div>
 			</div>
-			<News cards={cards}/>
-			<Gallery gallery={gallery}/>
-			<Statistic/>
-		</Layout>
+			<News cards={cards.newsCards} />
+			<Gallery gallery={cards.gallery} />
+			{/* <Statistic /> */}
+		</>
 	)
-	}
+}
 
 export default Home

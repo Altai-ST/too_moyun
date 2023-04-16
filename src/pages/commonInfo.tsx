@@ -1,7 +1,15 @@
+import Layout from '@/components/layouts/Layout'
 import CommonInfo from '@/components/screens/commonInfo/CommonInfo'
+import MalymattarPages from '@/components/screens/mallymattarPages/MalymattarPages'
 import { CommonInfoContainer } from '@/interfaces/common-info.interface'
 import { CommonInfoService } from '@/services/commonInfo.service'
 import { NextPage } from 'next'
+
+// const CommonInfoPage: NextPage = () => {
+// 	return <Layout>
+// 			<MalymattarPages/>
+// 	</Layout>
+// }
 
 const CommonInfoPage: NextPage<CommonInfoContainer> = (props) => {
 	return <div>

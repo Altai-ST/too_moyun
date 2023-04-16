@@ -3,10 +3,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import paginationReducer from './Features/pagination/paginationSlice'
 
+import firstDataReducer from './Features/firstGetData/firstGetDataSlice'
 
 export const store = configureStore({
 	reducer:{
-		pagination: paginationReducer
+		pagination: paginationReducer,
+		firstData: firstDataReducer
 	}
 })
 

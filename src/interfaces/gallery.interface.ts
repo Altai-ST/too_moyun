@@ -1,4 +1,4 @@
-export interface IResult{
+export interface IResultG{
 	id: number
 	photo: string
 	description: string
@@ -9,7 +9,7 @@ export interface IGallery{
 	count: Number
 	next: Number
 	pervious: Number
-	results: IResult[]
+	results: IResultG[]
 }
 
 

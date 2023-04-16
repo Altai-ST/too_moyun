@@ -5,7 +5,7 @@ import { FC } from 'react'
 
 const CardsGar: FC<ICardGar> = ({cards}) => {
 	return (
-		<div className='flex w-1220 flex-wrap justify-between text-center text-2xl font-bold text-cardColor'>
+		<div className='flex laptop:w-1220 w-full laptop:flex-row flex-col flex-wrap justify-between text-center text-2xl font-bold text-cardColor laptop:px-0 px-3'>
 			{cards.results.map(el => {
 				return (
 					<div className='flex flex-col w-388 mt-6'>

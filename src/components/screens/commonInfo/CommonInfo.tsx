@@ -7,77 +7,78 @@ const CommonInfo: FC<CommonInfoContainer> = ({ commonInfo }) => {
 	return (
 		<Layout>
 			<div className='text-center w-full mb-16 pt-14'>
-				<h1 className='text-4xl text-red-600 font-bold mb-12'>
+				<h1 className='laptop:text-4xl text-base text-red-600 font-bold laptop:mb-12 mb-3'>
 					Жалпы маалымат
 				</h1>
-				<p className='text-cardColor text-2xl font-bold'>
+				<p className='text-cardColor laptop:text-2xl text-base font-bold'>
 					Айыл өкмөтү боюнча жалпы маалымат
 				</p>
 			</div>
-			<div className='flex w-full px-24 justify-between mb-32'>
-				<div className='flex flex-col rounded-2xl w-28p pt-9 border pl-10'>
-					<p className='text-cardColor text-5xl font-bold mb-6'>
+			<div className='flex laptop:flex-row flex-col w-full laptop:px-24 px-14 justify-between laptop:mb-32 mb-0 laptop:h-auto h-450'>
+				<div className='flex flex-col rounded-2xl laptop:w-28p w-full laptop:text-start text-center laptop:pt-9 pt-6 border laptop:pl-10 pl-0'>
+					<p className='text-cardColor laptop:text-5xl text-base font-bold laptop:mb-6 mb-0'>
 						{commonInfo.territory}
 						<span className='text-commonInfo'> км</span>
 					</p>
-					<h4 className='text-2xl text-cardColor font-bold mb-2'>
+					<h4 className='laptop:text-2xl text-base text-cardColor font-bold mb-2'>
 						Жалпы территориясы
 					</h4>
-					<p className='text-newsColor text-lg mb-10 w-80'>
+					<p className='text-newsColor laptop:text-lg text-sm laptop:mb-10 mb-6 laptop:w-80 w-full'>
 						Айыл өкмөтү боюнча жалпы маалымат
 					</p>
 				</div>
-				<div className='flex flex-col rounded-2xl w-28p pt-9 border pl-10'>
-					<p className='text-cardColor text-5xl font-bold mb-6'>
+				<div className='flex flex-col rounded-2xl laptop:w-28p w-full laptop:text-start text-center laptop:pt-9 pt-6 border laptop:pl-10 pl-0'>
+					<p className='text-cardColor laptop:text-5xl text-base font-bold laptop:mb-6 mb-0'>
 						{commonInfo.number_of_villages}
 						<span className='text-commonInfo'> бирдик</span>
 					</p>
-					<h4 className='text-2xl text-cardColor font-bold mb-2'>
+					<h4 className='laptop:text-2xl text-base text-cardColor font-bold mb-2'>
 						Айылдардын саны
 					</h4>
-					<p className='text-newsColor text-lg mb-10 w-80'>
+					<p className='text-newsColor laptop:text-lg text-sm laptop:mb-10 mb-6 laptop:w-80 w-full'>
 						Айыл өкмөтү боюнча жалпы маалымат
 					</p>
 				</div>
-				<div className='flex flex-col rounded-2xl w-28p pt-9 border pl-10'>
-					<p className='text-cardColor text-4xl font-bold mb-6'>
+				<div className='flex flex-col rounded-2xl laptop:w-28p w-full laptop:text-start text-center laptop:pt-9 pt-6 border laptop:pl-10 pl-0'>
+					<p className='text-cardColor laptop:text-5xl text-base font-bold laptop:mb-6 mb-0'>
 						{commonInfo.number_of_smokes}
 						<span className='text-commonInfo'> бирдик</span>
 					</p>
-					<h4 className='text-2xl text-cardColor font-bold mb-2'>
+					<h4 className='laptop:text-2xl text-base text-cardColor font-bold mb-2'>
 						Түтүндөрдүн саны
 					</h4>
-					<p className='text-newsColor text-lg mb-10 w-80'>
+					<p className='text-newsColor laptop:text-lg text-sm laptop:mb-10 mb-6 laptop:w-80 w-full'>
 						Айыл өкмөтү боюнча жалпы маалымат
 					</p>
 				</div>
 			</div>
-			<div className='w-full mb-36 px-24 flex justify-between h-600'>
-				<div className='flex flex-col justify-center w-334'>
-					<h4 className='text-2xl font-bold text-cardColor'>
+			
+			<div className='w-full mb-36 laptop:px-24 px-10 flex justify-between laptop:flex-row flex-col laptop:h-600 h-auto'>
+				<div className='flex flex-col justify-center laptop:w-334 w-full laptop:text-start text-center'>
+					<h4 className='laptop:text-2xl text-base font-bold text-cardColor'>
 						Жогорку жана атайын орто билим берүү мекемелери
 					</h4>
 				</div>
-				<div className='flex flex-wrap w-1/2'>
-					<div className='flex flex-col justify-center items-center h-300 w-1/2 border-r-2 border-b-2'>
+				<div className='flex flex-wrap flex-row laptop:w-1/2 w-full'>
+					<div className='flex flex-col justify-center items-center h-300 w-45% only:border-r-2 border-b-2'>
 						<p className='text-4xl text-cardColor font-bold mb-2'>
 							{commonInfo.avg_learn}
 						</p>
 						<p className='text-xl text-cardColor'>Атайын орто билим берүү</p>
 					</div>
-					<div className='flex flex-col justify-center items-center h-300 w-1/2 border-b-2'>
+					<div className='flex flex-col justify-center items-center h-300 w-45% border-b-2'>
 						<p className='text-4xl text-cardColor font-bold mb-2'>
 							{commonInfo.licey}
 						</p>
 						<p className='text-xl text-cardColor'>Лицей </p>
 					</div>
-					<div className='flex flex-col justify-center items-center h-300 w-1/2 border-r-2'>
+					<div className='flex flex-col justify-center items-center h-300 w-45% border-r-2'>
 						<p className='text-4xl text-cardColor font-bold mb-2'>
 							{commonInfo.teacher_number}
 						</p>
 						<p className='text-xl text-cardColor'>Мугалимдердин саны</p>
 					</div>
-					<div className='flex flex-col justify-center items-center h-300 w-1/2'>
+					<div className='flex flex-col justify-center items-center h-300 w-45%'>
 						<p className='text-4xl text-cardColor font-bold mb-2'>
 							{commonInfo.students_number}
 						</p>

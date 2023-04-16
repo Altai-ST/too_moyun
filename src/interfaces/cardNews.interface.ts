@@ -1,6 +1,7 @@
 export interface IResult{
 	id: number
 	title: string
+	sub_title:string
 	img: string
 	text: string
 	bottom_title: string
