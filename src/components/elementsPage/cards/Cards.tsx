@@ -5,6 +5,7 @@ import { FC, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { setValue, setCount } from '@/GlobalRedux/Features/pagination/paginationSlice'
+import Link from 'next/link'
 
 const Cards: FC<ICards> = ({cards}) => {
 
@@ -32,9 +33,9 @@ const Cards: FC<ICards> = ({cards}) => {
 							height={388}
 							alt=''
 						/>
-						<p>
+						<Link href={`/newsPage/${el.id}`}>
 							{el.text}
-						</p>
+						</Link>
 					</div>
 				)
 			})}

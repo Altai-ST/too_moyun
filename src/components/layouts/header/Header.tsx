@@ -36,7 +36,7 @@ const Header: FC = () => {
 						>
 							Жарыялар
 						</Link>
-						<Link href='/press' className={linkStyle}>
+						<Link href='/newsPage' className={linkStyle}>
 							Пресса
 						</Link>
 						<Link
@@ -47,7 +47,7 @@ const Header: FC = () => {
 						>
 							Маалытматтар
 						</Link>
-						<Link href='/revolution' className={linkStyle}>
+						<Link href='/download' className={linkStyle}>
 							Токтомдор
 						</Link>
 

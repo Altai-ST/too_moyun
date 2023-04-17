@@ -10,13 +10,4 @@ const MalymattarPage: NextPage<ICardsData> = () => {
 }
 
 
-
-// export async function getServerSideProps() {
-//   const cardNews = await CardNewsService.getCardNews(1,6)
-//   return {
-//     props: {cardNews},
-//   }
-// }
-
-
 export default MalymattarPage

@@ -23,10 +23,9 @@ const Footer: FC = () => {
 				<Link href='/malymattar' className={linkStyle}>
 					Маалытматтар
 				</Link>
-				<Link href='/revolution' className={linkStyle}>
+				<Link href='/download' className={linkStyle}>
 					Токтомдор
 				</Link>
-
 				<Link href='/gallery' className={linkStyle}>
 					Фотогалерея
 				</Link>

@@ -4,7 +4,7 @@ import { ICardGar, IGar } from '@/interfaces/gar.interface'
 import { GarService } from '@/services/gar.service'
 import { NextPage } from 'next'
 
-const NewsPage: NextPage<ICardGar> =(props) =>{
+const GarPage: NextPage<ICardGar> =(props) =>{
 	return <div>
 		<GarScreen cards={props.cards}/>
 	</div>
@@ -18,4 +18,4 @@ export async function getStaticProps() {
     revalidate: 10,
   }
 }
-export default NewsPage
+export default GarPage

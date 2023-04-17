@@ -60,7 +60,7 @@ const CommonInfo: FC<CommonInfoContainer> = ({ commonInfo }) => {
 					</h4>
 				</div>
 				<div className='flex flex-wrap flex-row laptop:w-1/2 w-full'>
-					<div className='flex flex-col justify-center items-center h-300 w-45% only:border-r-2 border-b-2'>
+					<div className='flex flex-col justify-center items-center h-300 w-45% border-r-2 border-b-2'>
 						<p className='text-4xl text-cardColor font-bold mb-2'>
 							{commonInfo.avg_learn}
 						</p>

@@ -19,6 +19,10 @@ export interface ICardNews{
 	results: IResult[]
 }
 
+export interface idCard{
+	id:number
+}
+
 
 export interface ICardsData{
 	cardNews: ICardNews

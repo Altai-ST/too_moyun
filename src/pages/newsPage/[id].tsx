@@ -1,24 +1,23 @@
 import Layout from '@/components/layouts/Layout'
-import MalymattarPages from '@/components/screens/mallymattarPages/MalymattarPages'
+import NewPageId from '@/components/screens/news/NewPageId'
 import { IResult } from '@/interfaces/cardNews.interface'
-import { CardNewsService } from '@/services/cardNewsData.service'
+import { NewsService } from '@/services/newsData.service'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
-const MalymattarPage: NextPage<IResult> = (props) => {
+const NewsPageId: NextPage<IResult> = (props) => {
 	const {query} = useRouter()
 
 	const newId = query.id === undefined ? query.id : parseInt(query.id.toString())
 	
 	return <Layout>
-		<MalymattarPages id={newId === undefined ? 1 : newId}/>
-		<h1>{}</h1>
+		<NewPageId id={newId === undefined ? 1 : newId}/>
 	</Layout>
 }
 export async function getStaticPaths() {
-	const cardNews = await CardNewsService.getCardNews(1,2)
+	const cardNews = await NewsService.getNewsOne(1,6)
 	return{
-		paths: cardNews.results.map(card=>({
+		paths: cardNews.map(card=>({
 			params: {
 				id:card.id.toString(),
 			}
@@ -28,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-	const results = await CardNewsService.getCardNewsOne(1, 1)
+	const results = await NewsService.getSix(1, 1)
 	return {
 		props: { results },
 		revalidate: 10,
@@ -36,4 +35,4 @@ export async function getStaticProps() {
 }
 
 
-export default MalymattarPage
+export default NewsPageId
