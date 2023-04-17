@@ -31,12 +31,12 @@ const Header: FC = () => {
 						</Link>
 						<DowndropLink />
 						<Link
-							href='/news'
-							className={pathname === '/news' ? linkStyleActive : linkStyle}
+							href='/garNews'
+							className={pathname === '/garNews' ? linkStyleActive : linkStyle}
 						>
 							Жарыялар
 						</Link>
-						<Link href='/newsPage' className={linkStyle}>
+						<Link href='/newsPage' className={pathname === '/newsPage' ? linkStyleActive : linkStyle}>
 							Пресса
 						</Link>
 						<Link
@@ -47,11 +47,11 @@ const Header: FC = () => {
 						>
 							Маалытматтар
 						</Link>
-						<Link href='/download' className={linkStyle}>
+						<Link href='/download' className={pathname === '/download' ? linkStyleActive : linkStyle}>
 							Токтомдор
 						</Link>
 
-						<Link href='/photoGallery' className={linkStyle}>
+						<Link href='/photoGallery' className={pathname === '/photoGallery' ? linkStyleActive : linkStyle}>
 							Фотогалерея
 						</Link>
 					</div>

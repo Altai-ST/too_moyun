@@ -1,11 +1,22 @@
 import Layout from '@/components/layouts/Layout'
+import { getFirstGallery } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
+import { AppDispatch, RootState } from '@/GlobalRedux/store'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 const PhotoGallery: FC = () => {
 	const imgGallery1Style = 'w-72 h-64 rounded-2xl'
 
 	const imgGallery2Style = 'w-72 h-72 rounded-2xl'
+
+	// const cards = useSelector((state: RootState)=>state.firstData)
+
+	// const dispatch = useDispatch<AppDispatch>()
+
+	// useEffect(()=>{
+	// 	dispatch(getFirstGallery({page:1, pageSize:10}))
+	// },[])
 
 	return (
 		<Layout>

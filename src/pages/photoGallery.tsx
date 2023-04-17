@@ -5,4 +5,9 @@ const PhotoGalleryPage: NextPage = () => {
 	return <PhotoGallery/>
 }
 
+
+
+
+
+
 export default PhotoGalleryPage

@@ -1,22 +1,22 @@
-import { getFirstCards } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
+import { getFirstGar } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
 import { AppDispatch, RootState } from '@/GlobalRedux/store'
 import { idCard } from '@/interfaces/cardNews.interface'
 import Image from 'next/image'
 import { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-const NewPageId: FC<idCard> = (id) => {
+const GarPageId: FC<idCard> = (id) => {
 
 	const cardNews = useSelector((state: RootState) => state.firstData)
 
 	const dispatch = useDispatch<AppDispatch>()
 
 	useEffect(() => {
-		dispatch(getFirstCards({ page: 1, pageSize: 4 }))
+		dispatch(getFirstGar({ page: 1, pageSize: 4 }))
 	}, [])
 
 	const card = () => {
-		return cardNews.newsCards.results.filter(el => el.id === id.id)
+		return cardNews.garNews.results.filter(el => el.id === id.id)
 	}
 
 	const cardEl = card();
@@ -30,4 +30,4 @@ const NewPageId: FC<idCard> = (id) => {
 	</div>
 }
 
-export default NewPageId
+export default GarPageId

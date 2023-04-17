@@ -1,5 +1,3 @@
-import { IResult } from './../../../interfaces/gar.interface'
-import { IResultG } from './../../../interfaces/gallery.interface'
 import { ICardNews } from './../../../interfaces/cardNews.interface'
 import { IGallery } from './../../../interfaces/gallery.interface'
 ;('use client')
@@ -7,12 +5,23 @@ import { IGallery } from './../../../interfaces/gallery.interface'
 import { ICardSize, INews } from '@/interfaces/news.interface'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { IGar } from '@/interfaces/gar.interface'
 
 export const getFirstCards = createAsyncThunk(
 	'firstData/getCards',
 	async (cardSize: ICardSize, thunkApi) => {
 		const { data } = await axios.get<INews>(
 			`http://92.255.111.47/news/?page=${cardSize.page}&page_size=${cardSize.pageSize}`
+		)
+		return data
+	}
+)
+
+export const getFirstGar = createAsyncThunk(
+	'firstData/getGar',
+	async (cardSize: ICardSize, thunkApi) => {
+		const { data } = await axios.get<IGar>(
+			`http://92.255.111.47/ads/?page=${cardSize.page}&page_size=${cardSize.pageSize}`
 		)
 		return data
 	}
@@ -44,6 +53,7 @@ export interface FirstDataState {
 	newsCards: INews
 	gallery: IGallery
 	malymattar: ICardNews
+	garNews: IGar
 }
 
 const initialState: FirstDataState = {
@@ -54,9 +64,16 @@ const initialState: FirstDataState = {
 		count: 4,
 		next: 1,
 		pervious: 0,
-		results: [{ id: 0, photo: '', description: '' },{ id: 0, photo: '', description: '' }],
+		results: [
+			{ id: 0, photo: '', description: '' },
+			{ id: 0, photo: '', description: '' },
+			{ id: 0, photo: '', description: '' },
+			{ id: 0, photo: '', description: '' },
+			{ id: 0, photo: '', description: '' },
+		],
 	},
 	malymattar: { count: 4, next: 1, pervious: 0, results: [] },
+	garNews: { count: 4, next: 1, pervious: 0, results: [] },
 }
 
 export const firstDataSlice = createSlice({
@@ -79,6 +96,9 @@ export const firstDataSlice = createSlice({
 			}),
 			builder.addCase(getFirstMalymattar.fulfilled, (state, action) => {
 				state.malymattar = action.payload
+			}),
+			builder.addCase(getFirstGar.fulfilled, (state, action) => {
+				state.garNews = action.payload
 			})
 	},
 })

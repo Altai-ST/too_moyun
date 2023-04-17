@@ -21,19 +21,20 @@ const Home: FC = () => {
 
 	useEffect(()=>{
 		dispatch(getFirstCards({page:1, pageSize:4}))
-		dispatch(getFirstGallery({page:1, pageSize:2}))
+		dispatch(getFirstGallery({page:1, pageSize:5}))
 	},[])
 	
 	return (
 		<>
-			<div className='flex laptop:justify-center   justify-start laptop:mt-10 mt-0 '>
+			<div className='flex laptop:justify-center   justify-start laptop:mt-10 mt-0 bg-gray-300'>
 				<div className='h-600 laptop:w-1000 w-full'>
 					<Carousel slideInterval={5000}>
-						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
-						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
-						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
-						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
-						<Image src='/carousel1.png' width={1000} height={660} alt='...' />
+						{cards.gallery.results.map((el)=>{
+							return(
+								<Image className='w-855 h-520' src={el === null ? '' : el.photo} width={1000} height={660} alt='...' />
+							)
+						})}
+						
 					</Carousel>
 				</div>
 			</div>

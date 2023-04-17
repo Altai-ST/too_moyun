@@ -1,13 +1,15 @@
+import Faq from '@/components/elementsPage/q&a/Faq'
 import Layout from '@/components/layouts/Layout'
 import { getFirstMalymattar } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
 import { AppDispatch, RootState } from '@/GlobalRedux/store'
 import { ICardsData } from '@/interfaces/cardNews.interface'
+import { IFaqs } from '@/interfaces/faq.interface'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-const Malymattar: FC= () => {
+const Malymattar: FC<IFaqs>= ({faqs}) => {
 
 	const cardNews = useSelector((state: RootState)=>state.firstData)
 
@@ -16,6 +18,9 @@ const Malymattar: FC= () => {
 	useEffect(()=>{
 		dispatch(getFirstMalymattar({page:1, pageSize:3}))
 	},[])
+
+
+	
 
 	return (
 		<>
@@ -56,6 +61,7 @@ const Malymattar: FC= () => {
 							<Link className='z-10' href='/commonInfo'>Кенен билүү</Link>
 						</div>
 			</div>
+			<Faq faqs={faqs}/>
 		</>
 	)
 }

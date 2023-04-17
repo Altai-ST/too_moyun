@@ -1,6 +1,7 @@
 
 import { ICardGar } from '@/interfaces/gar.interface'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 
 const CardsGar: FC<ICardGar> = ({cards}) => {
@@ -15,9 +16,9 @@ const CardsGar: FC<ICardGar> = ({cards}) => {
 							height={388}
 							alt=''
 						/>
-						<p>
+						<Link href={`/garNews/${el.id}`}>
 							{el.text}
-						</p>
+						</Link>
 					</div>
 				)
 			})}
