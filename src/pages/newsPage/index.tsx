@@ -1,3 +1,4 @@
+import Layout from '@/components/layouts/Layout'
 import GarScreen from '@/components/screens/news/GarScreen'
 import NewsScreen from '@/components/screens/news/NewsScreen'
 import { ICardNews } from '@/interfaces/cardNews.interface'
@@ -8,9 +9,9 @@ import { NewsService } from '@/services/newsData.service'
 import { NextPage } from 'next'
 
 const NewsPage: NextPage<ICards> =(props) =>{
-	return <div>
+	return <Layout>
 		<NewsScreen cards={props.cards}/>
-	</div>
+	</Layout>
 }
 
 

@@ -8,20 +8,6 @@ import { setValue, setCount } from '@/GlobalRedux/Features/pagination/pagination
 import Link from 'next/link'
 
 const Cards: FC<ICards> = ({cards}) => {
-
-	// const [pageSize, setPageSize] = useState({
-	// 	page:1,
-	// 	pageSize: 1,	
-	// })
-
-	// const dispatch = useDispatch()
-
-	// const handleChange = ()=>{
-	// 	setPageSize({...pageSize, pageSize: 3})
-	// 	dispatch(setCount(pageSize.pageSize))
-	// 	dispatch(setValue(pageSize.page))
-	// }
-
 	return (
 		<div className='flex laptop:flex-row flex-col laptop:w-1220 w-full flex-wrap laptop:justify-between text-center text-2xl font-bold text-cardColor'>
 			{cards.results.map(el => {

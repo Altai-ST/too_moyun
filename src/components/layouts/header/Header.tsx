@@ -1,17 +1,39 @@
 import DowndropLink from '@/components/elementsPage/downdrop/DowndropLink'
+import { getAllSearch } from '@/GlobalRedux/Features/search/searchSlice'
+import { AppDispatch } from '@/GlobalRedux/store'
 import { Size, useReSize } from '@/hooks/useReSize'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 const Header: FC = () => {
 	const { pathname } = useRouter()
 
+	// const router = useRouter()
+
 	const linkStyle = `text-navColor hover:text-black py-4`
 
 	const linkStyleActive = `hover:text-black py-4 active:text-black`
+
 	const size: Size = useReSize()
+
+	// const [searchWord, setSearchWord]=useState('')
+
+	// const dispatch = useDispatch<AppDispatch>()
+
+	// const handleChange=(val: any)=>{
+	// 	setSearchWord(val.value)	
+	// }
+
+	// const handleClick=()=>{
+	// 	if(pathname === '/'){
+	// 		dispatch(getAllSearch({cat:'all', q:searchWord}))
+	// 		router.push('/search')
+	// 	}
+	// }
+
 
 	return (
 		<div>
@@ -60,9 +82,12 @@ const Header: FC = () => {
 				)}
 
 				<div className='relative'>
-					<Image className='absolute laptop:top-3 laptop:left-4 top-3 left-3' src='/search.png' alt='' width={16} height={16}/>
+					<button className='absolute laptop:top-3 laptop:left-4 top-3 left-3'>
+						<Image src='/search.png' alt='' width={16} height={16}/>
+					</button>
 					<input
-						className='laptop:w-64 laptop:rounded-3xl laptop:pl-12 bg-searchBg text-searchColor laptop:py-2 w-10 h-10 rounded-full focus:w-64 active:w-64 focus:pl-8 active:pl-8'
+						
+						className='laptop:w-64 laptop:rounded-3xl laptop:pl-12 bg-searchBg text-searchColor laptop:py-2 w-10 h-10 rounded-full focus:w-64 active:w-64 focus:pl-12 active:pl-12 pr-5'
 						placeholder={size.width === undefined ? (
 							''
 						) : size.width >= 1024 ? 'Search for...' : ''}
