@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-const DowndropLink: FC = () => {
+const DropdownFooter: FC = () => {
 	const router = useRouter()
 	const handleChange = (value: string)=>{
 		router.push(value);
@@ -9,8 +9,8 @@ const DowndropLink: FC = () => {
 	
 	return (
 		<div>
-			<div className='relative w-40 mt-2'>
-				<select className='w-40 text-navColor bg-white border-none outline-none appearance-none focus:border-white text-lg' onChange={event =>handleChange(event.target.value)}>
+			<div className='relative laptop:w-40 w-32 text-start'>
+				<select className='laptop:w-40 w-32 pl-0 pt-0 text-white bg-navColor  border-none outline-none appearance-none focus:border-white text-lg' onChange={event =>handleChange(event.target.value)}>
 					<option className='w-20' selected disabled>Биз жонундо</option>
 					<option className='w-20' value='/culture'>Маднияты</option>
 					<option className='w-20' value='/map'>Дареги</option>
@@ -20,4 +20,4 @@ const DowndropLink: FC = () => {
 	)
 }
 
-export default DowndropLink
+export default DropdownFooter

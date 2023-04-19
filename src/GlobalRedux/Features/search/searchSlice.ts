@@ -1,4 +1,4 @@
-import { ISearchGet, ISearchAll } from './../../../interfaces/search.interface'
+import { ISearchGet } from './../../../interfaces/search.interface'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
@@ -6,9 +6,9 @@ export const getAllSearch = createAsyncThunk(
 	'searchSlice/getAllSearch',
 	async (searchGet: ISearchGet, thunkApi) => {
 		try {
-			const { data } = await axios.get<ISearchAll>(
-				`http://92.255.111.47/search/${searchGet.cat}&page_size=${searchGet.q}`
-			)
+			const { data } = await axios.get<any>(
+				`http://92.255.111.47/search/?q=${searchGet.q}&page=${searchGet.page}&page_size=${searchGet.pageSize}`
+			)			
 			return data
 		} catch (err: any) {
 			return thunkApi.rejectWithValue(err.message)
@@ -17,40 +17,18 @@ export const getAllSearch = createAsyncThunk(
 )
 
 export interface SearchState {
-	searchAll: ISearchAll
+	searchAll: any
+	searchWord:string
+	errorSearch: boolean
 }
 
 const initialState: SearchState = {
-	searchAll: {
-		news: [{ id: 0, img: '', title: '', text: '' }],
-		ads: [{ id: 0, img: '', title: '', text: '' }],
-		info: [
-			{
-				id: 0,
-				title: '',
-				sub_title: '',
-				img: '',
-				text: '',
-				bottom_title: '',
-				bottom_text: '',
-				img_1: '',
-				img_2: '',
-				img_3: '',
-			},
-		],
-		resolve: [
-			{
-				title: '',
-				file: '',
-			},
-		],
-		gallery: [
-			{
-				photo: '',
-				description: '',
-			},
-		],
+	searchAll:{
+		count: 0,
+		result: []
 	},
+	searchWord: '',
+	errorSearch:false
 }
 
 
@@ -59,15 +37,29 @@ export const searchSlice = createSlice({
 	name: 'searchSlice',
 	initialState,
 	reducers: {
-		
+		setNotErrorSearch: (state, action) => {
+			state.errorSearch = action.payload
+		},
+		setSearchWordP:(state, action)=>{
+			console.log(action.payload);
+			
+			state.searchWord = action.payload
+		}
 	},
 	extraReducers: builder=>{
 		builder.addCase(getAllSearch.fulfilled,(state,action)=>{
+			console.log(action.payload);
+			
 			state.searchAll = action.payload
+		}).addCase(getAllSearch.rejected, (state, action)=>{
+			if (action.payload === 'Network Error') {
+				state.errorSearch = true
+			}
 		})
 	}
 })
 
 
+export const { setNotErrorSearch,setSearchWordP} = searchSlice.actions
 
 export default searchSlice.reducer

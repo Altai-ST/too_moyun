@@ -1,7 +1,8 @@
 
 export interface ISearchGet{
-	cat:string
 	q:string
+	page:number
+	pageSize:number
 }
 
 

@@ -8,8 +8,8 @@ const Culture: FC<ICultureData> = ({culture}) => {
 	return (
 		<>
 			<div className='bg-gray-200'>
-				<div className='flex justify-around'>
-					<div className='h-500 w-555 mb-16'>
+				<div className='flex laptop:flex-row flex-col justify-around'>
+					<div className='h-500 laptop:w-555 w-full mb-16'>
 						<Carousel slideInterval={5000}>
 							{culture.images.map((el)=>{
 								return(
@@ -18,11 +18,11 @@ const Culture: FC<ICultureData> = ({culture}) => {
 							})}
 						</Carousel>
 					</div>
-					<h2 className='text-4xl font-bold flex items-center w-1/4'>
+					<h2 className='text-4xl font-bold flex items-center laptop:w-1/4 w-full laptop:justify-start justify-center laptop:mb-0 mb-5'>
 						Маданияты
 					</h2>
 				</div>
-				<div className='mx-28 pb-32'>
+				<div className='laptop:mx-28 mx-4 pb-32 laptop:text-start text-center'>
 					<p>
 						{culture.description}
 					</p>
