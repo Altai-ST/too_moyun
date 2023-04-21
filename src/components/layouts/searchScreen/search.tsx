@@ -4,6 +4,7 @@ import {
 } from '@/GlobalRedux/Features/search/searchSlice'
 import { AppDispatch, RootState } from '@/GlobalRedux/store'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -99,8 +100,7 @@ const Search: FC = () => {
 									height={388}
 									alt=''
 								/>
-								<p>{el.title}</p>
-								{/* <Link href={`/newsPage/${el.id}`}>{el.title}</Link> */}
+								<Link href={`/newsPage/${el.id}`}>{el.title}</Link>
 							</div>
 						)
 					})}
@@ -113,8 +113,7 @@ const Search: FC = () => {
 									height={388}
 									alt=''
 								/>
-								<p>{el.title}</p>
-								{/* <Link href={`/newsPage/${el.id}`}>{el.title}</Link> */}
+								<Link href={`/newsPage/${el.id}`}>{el.title}</Link>
 							</div>
 						)
 					})}
@@ -136,6 +135,7 @@ const Search: FC = () => {
 									<h1 className='text-3xl font-bold'>{el.title}</h1>
 									<p>{el.sub_title}</p>
 								</div>
+								<Link className='z-10' href={`/malymattar/${el.id}`}>Кенен билүү</Link>
 							</div>
 						)
 					})}

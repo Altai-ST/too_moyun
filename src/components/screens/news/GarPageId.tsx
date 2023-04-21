@@ -1,4 +1,5 @@
 import { getFirstGar } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
+import { getGarPagination } from '@/GlobalRedux/Features/pagination/paginationSlice'
 import { AppDispatch, RootState } from '@/GlobalRedux/store'
 import { idCard } from '@/interfaces/cardNews.interface'
 import Image from 'next/image'
@@ -7,17 +8,18 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const GarPageId: FC<idCard> = (id) => {
 
-	const cardNews = useSelector((state: RootState) => state.firstData)
+	const cardNews = useSelector((state: RootState) => state.pagination)
 
 	const dispatch = useDispatch<AppDispatch>()
 
 	useEffect(() => {
-		dispatch(getFirstGar({ page: 1, pageSize: 4 }))
+		dispatch(getGarPagination({ page: 1, pageSize: 6 }))
 	}, [])
 
 	const card = () => {
 		return cardNews.garNews.results.filter(el => el.id === id.id)
 	}
+	
 
 	const cardEl = card();
 

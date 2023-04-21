@@ -21,7 +21,7 @@ const GarScreen: FC<ICardGar> = () => {
 	})
 
 	useEffect(() => {
-		dispatch(getGarPagination({ page: 1, pageSize: 4 }))
+		dispatch(getGarPagination({ page: 1, pageSize: 6 }))
 	}, [])
 
 	const pages = [

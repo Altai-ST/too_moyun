@@ -1,5 +1,6 @@
 import Layout from '@/components/layouts/Layout'
 import { getFirstMalymattar } from '@/GlobalRedux/Features/firstGetData/firstGetDataSlice'
+import { getGarPagination } from '@/GlobalRedux/Features/pagination/paginationSlice'
 import { AppDispatch, RootState } from '@/GlobalRedux/store'
 import { Size, useReSize } from '@/hooks/useReSize'
 import { ICardsData, idCard, IResult } from '@/interfaces/cardNews.interface'
@@ -10,12 +11,12 @@ import { useDispatch, useSelector } from 'react-redux'
 const MalymattarPages: FC<idCard> = id => {
 	const size: Size = useReSize()
 
-	const cardNews = useSelector((state: RootState) => state.firstData)
+	const cardNews = useSelector((state: RootState) => state.pagination)
 
 	const dispatch = useDispatch<AppDispatch>()
 
 	useEffect(() => {
-		dispatch(getFirstMalymattar({ page: 1, pageSize: 3 }))
+		dispatch(getGarPagination({ page: 1, pageSize: 3 }))
 	}, [])
 
 	const card = () => {

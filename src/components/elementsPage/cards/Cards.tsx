@@ -20,7 +20,7 @@ const Cards: FC<ICards> = ({cards}) => {
 							alt=''
 						/>
 						<Link href={`/newsPage/${el.id}`}>
-							{el.text}
+							{el.title}
 						</Link>
 					</div>
 				)

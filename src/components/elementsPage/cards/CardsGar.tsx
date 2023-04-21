@@ -17,7 +17,7 @@ const CardsGar: FC<ICardGar> = ({cards}) => {
 							alt=''
 						/>
 						<Link href={`/garNews/${el.id}`}>
-							{el.text}
+							{el.title}
 						</Link>
 					</div>
 				)
