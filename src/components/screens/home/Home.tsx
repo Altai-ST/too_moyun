@@ -35,7 +35,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <div className="flex laptop:justify-center   justify-start laptop:mt-10 mt-0 bg-gray-300">
+      <div className="flex laptop:justify-center   justify-start laptop:mt-10 mt-0">
         <div className="h-600 laptop:w-1000 w-full">
           <Carousel slideInterval={5000}>
             {cards.newsCards.results.map((el) => {

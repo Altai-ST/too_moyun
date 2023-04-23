@@ -65,6 +65,9 @@ module.exports = {
       spacing: {
         '500': '500px',
         '40%':'40%'
+      },
+      backgroundImage: {
+        "bg-too":"url('/public/tooBg.png')"
       }
     },
   },
