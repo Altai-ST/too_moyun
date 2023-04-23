@@ -13,6 +13,7 @@ import {
   getGallery,
 } from "@/GlobalRedux/Features/pagination/paginationSlice";
 import { AppDispatch, RootState } from "@/GlobalRedux/store";
+import { Size, useReSize } from "@/hooks/useReSize";
 import { IGalleryData } from "@/interfaces/gallery.interface";
 import { ICards } from "@/interfaces/news.interface";
 import { Carousel } from "flowbite-react";
@@ -25,6 +26,7 @@ const Home: FC = () => {
   const cards = useSelector((state: RootState) => state.firstData);
 
   const dispatch = useDispatch<AppDispatch>();
+  const size: Size = useReSize();
 
   useEffect(() => {
     dispatch(getFirstCards({ page: 1, pageSize: 4 }));
@@ -39,17 +41,29 @@ const Home: FC = () => {
             {cards.newsCards.results.map((el) => {
               return (
                 <div className="relative">
-					<Link href={`/newsPage/${el.id}`}>
-                  <Image
-                    className="w-full h-660"
-                    src={el === null ? "" : el.img}
-                    width={1000}
-                    height={660}
-                    alt="..."
-                  />
-                  <div className="absolute top-40% left-0 text-center w-full text-white">
-                    <p className="text-5xl font-bold">{el === null ? "" : el.title}</p>
-                  </div></Link>
+                  <Link href={`/newsPage/${el.id}`}>
+                    <Image
+                      className="w-full h-660"
+                      src={el === null ? "" : el.img}
+                      width={1000}
+                      height={660}
+                      alt="..."
+                    />
+                    <div className="absolute top-40% left-0 text-center w-full text-white">
+                      <p className="text-5xl font-bold mb-5">
+                        {el === null ? "" : el.title}
+                      </p>
+                      {size.width === undefined ? (
+                        <></>
+                      ) : size.width >= 1024 ? (
+                        <p className="laptop:text-sm mx-20">
+                          {el === null ? "" : el.text}
+                        </p>
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  </Link>
                 </div>
               );
             })}

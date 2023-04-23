@@ -5,7 +5,7 @@ import { FC } from 'react'
 const DownloadScreen: FC<IDownloads> = ({ files }) => {
 
 
-	const styleSpace = files[0] === undefined ? `px-32 mb-500` : `px-32 mb-10`
+	const styleSpace = files[0] === undefined ? `laptop:px-32 px-5 mb-500` : `laptop:px-32 px-5 mb-10`
 
 	console.log(files[0] === undefined);
 	
@@ -15,9 +15,9 @@ const DownloadScreen: FC<IDownloads> = ({ files }) => {
 			<div className={styleSpace}>
 				{files.map(el => {
 				return <div className='flex w-full justify-between bg-gray-400 py-5 px-2 font-bold items-center'>
-					<p className='text-4xl'>{el.title}</p>
+					<p className='laptop:text-4xl text-xl'>{el.title}</p>
 					<div className='bg-white flex justify-center items-center'>
-						<a className='text-4xl py-2 pl-2 pr-10' href={el.file}>көчүрүү</a>
+						<a className='laptop:text-4xl text-lg py-2 pl-2 pr-10' href={el.file}>көчүрүү</a>
 					</div>
 				</div>
 			})}
