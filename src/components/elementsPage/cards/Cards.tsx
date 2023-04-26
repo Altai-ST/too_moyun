@@ -19,7 +19,7 @@ const Cards: FC<ICards> = ({cards}) => {
 							height={388}
 							alt=''
 						/>
-						<Link href={`/newsPage/${el.id}`}>
+						<Link className='text-lg' href={`/newsPage/${el.id}`}>
 							{el.title}
 						</Link>
 					</div>

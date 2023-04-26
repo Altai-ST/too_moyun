@@ -57,7 +57,7 @@ const Malymattar: FC<IFaqs>= ({faqs}) => {
 	return (
 		<>
 			<div className='flex flex-col items-center mb-16 laptop:px-0 px-4'>
-				<h1 className='laptop:text-4xl text-center text-2xl font-bold text-red-600 mb-4'>
+				<h1 className='laptop:text-3xl text-center text-2xl font-bold text-red-600 mb-4'>
 					Төө-Моюн айыл өкмөтү боюнча маалымат
 				</h1>
 				<p className='text-center laptop:text-lg text-base laptop:w-600 w-full'>
@@ -77,7 +77,7 @@ const Malymattar: FC<IFaqs>= ({faqs}) => {
 								<h1 className='text-3xl font-bold'>{el.title}</h1>
 								<p>{el.sub_title}</p>
 							</div>
-							<Link className='z-10' href={`/malymattar/${el.id}`}>Кенен билүү</Link>
+							<Link className='z-10 text-lg hover:underline' href={`/malymattar/${el.id}`}>Кенен билүү</Link>
 						</div>
 					)
 				})}
@@ -90,7 +90,7 @@ const Malymattar: FC<IFaqs>= ({faqs}) => {
 								<h1 className='text-3xl font-bold'>Жалпы маалымат</h1>
 								<p className='text-lg'>Билим берүү, Административдик-географиялык жайгашуусу жана башка</p>
 							</div>
-							<Link className='z-10' href='/commonInfo'>Кенен билүү</Link>
+							<Link className='z-10 text-lg hover:underline' href='/commonInfo'>Кенен билүү</Link>
 						</div>
 			</div>
 			<div className='flex w-full justify-center mb-20'>

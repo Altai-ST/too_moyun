@@ -58,9 +58,9 @@ const PhotoGallery: FC = () => {
 				<div className='flex laptop:flex-row flex-col flex-wrap mb-32'>
 					{cardNews.gallery.results.map(el => {
 						return (
-							<div className='laptop:w-1/3 w-full flex justify-center laptop:mb-0 mb-10'>
+							<div className='laptop:w-1/3 w-full flex justify-center mb-10'>
 								<Image
-									className='w-284 h-284'
+									className='w-284 h-284 rounded-xl'
 									src={el.photo}
 									alt=''
 									width={284}

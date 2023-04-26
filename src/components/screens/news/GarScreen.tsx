@@ -51,7 +51,7 @@ const GarScreen: FC<ICardGar> = () => {
 	return (
 		<>
 			<div className='w-full flex flex-col items-center mt-20 mb-16 text-center'>
-				<h1 className='text-3xl font-bold laptop:mb-10 mb-2'>Жарыялар</h1>
+				<h1 className='text-2xl font-bold laptop:mb-10 mb-2'>Жарыялар</h1>
 				<CardsGar cards={cardNews.garNews} />
 			</div>
 			<div className='flex w-full justify-center mb-20'>

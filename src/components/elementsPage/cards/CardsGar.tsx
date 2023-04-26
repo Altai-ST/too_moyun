@@ -16,7 +16,7 @@ const CardsGar: FC<ICardGar> = ({cards}) => {
 							height={388}
 							alt=''
 						/>
-						<Link href={`/garNews/${el.id}`}>
+						<Link className='text-lg' href={`/garNews/${el.id}`}>
 							{el.title}
 						</Link>
 					</div>

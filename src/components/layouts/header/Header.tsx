@@ -42,15 +42,15 @@ const Header: FC = () => {
 
 	return (
 		<div>
-			<header className='flex items-center bg-white w-full laptop:pt-12 pt-2 laptop:px-24 px-5 laptop:justify-center justify-between text-lg pb-8'>
+			<header className='flex items-center bg-white w-full laptop:pt-12 pt-2 laptop:px-20 px-5 laptop:justify-center justify-between text-lg pb-8'>
 				<div className='laptop:mr-8'>
 					<Image src='/logo.png' alt='' width={67} height={67} />
 				</div>
-				<div className='flex w-full items-center laptop:justify-start laptop:flex-row flex-row-reverse'>
+				<div className='flex w-full items-center laptop:justify-between laptop:flex-row flex-row-reverse'>
 					{size.width === undefined ? (
 						<></>
 					) : size.width >= 1024 ? (
-						<div className='mx-2 mt-0 flex justify-between w-2/3 mr-10'>
+						<div className='mx-2 mt-0 flex justify-between w-3/4 mr-10'>
 							<Link
 								href='/'
 								className={pathname === '/' ? linkStyleActive : linkStyle}

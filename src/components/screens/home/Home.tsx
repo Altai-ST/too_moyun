@@ -34,8 +34,10 @@ const Home: FC = () => {
   }, []);
 
   return (
-    <>
-      <div className="flex laptop:justify-center justify-start laptop:mt-10 mt-0 bg-gray-300 py-10">
+    <>      
+    <div className="bg-gray-300 text-center w-full laptop:pt-10 pt-0">
+      <h1 className='text-red-600 text-2xl font-bold laptop:mb-10 mb-2'>Жарыялар</h1>
+      <div className="flex laptop:justify-center justify-start laptop:mt-10 mt-0  py-10">
         <div className="h-600 laptop:w-1000 w-full ">
           <Carousel slideInterval={5000}>
             {cards.newsCards.results.map((el) => {
@@ -50,7 +52,7 @@ const Home: FC = () => {
                       alt="..."
                     />
                     <div className="absolute top-40% left-0 text-center w-full text-white">
-                      <p className="text-5xl font-bold mb-5">
+                      <p className="text-3xl font-bold mb-5">
                         {el === null ? "" : el.title}
                       </p>
                       {size.width === undefined ? (
@@ -73,6 +75,8 @@ const Home: FC = () => {
       <News cards={cards.newsCards} />
       <Gallery gallery={cards.gallery} />
       <Statistic />
+    </div>
+    
     </>
   );
 };
