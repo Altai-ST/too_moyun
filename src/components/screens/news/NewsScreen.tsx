@@ -1,8 +1,4 @@
 import { FC, useEffect, useState } from 'react'
-import Layout from '@/components/layouts/Layout'
-import { ICardGar} from '@/interfaces/gar.interface'
-import CardsGar from '@/components/elementsPage/cards/CardsGar'
-import { ICardNews } from '@/interfaces/cardNews.interface'
 import { ICards } from '@/interfaces/news.interface'
 import Cards from '@/components/elementsPage/cards/Cards'
 import { useDispatch, useSelector } from 'react-redux'
