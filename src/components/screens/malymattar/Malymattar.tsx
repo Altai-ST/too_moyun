@@ -65,7 +65,7 @@ const Malymattar: FC<IFaqs>= ({faqs}) => {
 					жонундо кененирээк билип алсанар болот.
 				</p>
 			</div>
-			<div className='laptop:mx-32 mx-0 flex laptop:flex-row flex-col flex-wrap justify-between laptop:pl-10 pl-0'>
+			<div className='laptop:mx-0 mx-0 flex laptop:flex-row flex-col flex-wrap justify-center laptop:pl-10 pl-0'>
 				{cardNews.malymattar.results.map(el => {
 					return (
 						<div className='flex flex-col px-10 text-white laptop:w-555 w-full h-450 rounded-lg justify-center relative pt-32 mb-10'>

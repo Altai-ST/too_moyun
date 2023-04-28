@@ -20,7 +20,7 @@ const Layout: FC<PropsWithChildren<unknown>> = ({ children }) => {
         <Image src="/tooBg.png" alt="background image" fill />
       </div>
           ): <></>}
-      <div className="relative z-10 laptop:w-4/5 w-full laptop:bg-white">
+      <div className="relative z-10 laptop:w-90% w-full laptop:bg-white">
         <Providers>
           <Header />
           {children}
