@@ -7,6 +7,7 @@ import Statistic from "@/components/layouts/statistic/Statistic";
 import {
   getFirstCards,
   getFirstGallery,
+  getFirstGar,
 } from "@/GlobalRedux/Features/firstGetData/firstGetDataSlice";
 import {
   getCards,
@@ -29,7 +30,7 @@ const Home: FC = () => {
   const size: Size = useReSize();
 
   useEffect(() => {
-    dispatch(getFirstCards({ page: 1, pageSize: 4 }));
+    dispatch(getFirstGar({ page: 1, pageSize: 6 }));
     dispatch(getFirstGallery({ page: 1, pageSize: 5 }));
   }, []);
 
@@ -40,7 +41,7 @@ const Home: FC = () => {
       <div className="flex laptop:justify-center justify-start laptop:mt-10 mt-0  py-10">
         <div className="h-600 laptop:w-1000 w-full ">
           <Carousel slideInterval={5000}>
-            {cards.newsCards.results.map((el) => {
+            {cards.garNews.results.map((el) => {
               return (
                 <div className="relative">
                   <Link href={`/newsPage/${el.id}`}>

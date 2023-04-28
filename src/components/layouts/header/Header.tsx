@@ -42,7 +42,7 @@ const Header: FC = () => {
 
 	return (
 		<div>
-			<header className='flex items-center bg-white w-full laptop:pt-12 pt-2 laptop:px-20 px-5 laptop:justify-center justify-between text-lg pb-8'>
+			<header className='flex items-center bg-white w-full laptop:pt-12 pt-2 laptop:px-10 px-5 laptop:justify-center justify-between text-lg pb-8'>
 				<div className='laptop:mr-8'>
 					<Image src='/logo.png' alt='' width={67} height={67} />
 				</div>
