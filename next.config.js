@@ -4,8 +4,8 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'http',
-				hostname: '92.255.111.47',
+				protocol: 'https',
+				hostname: 'api.toomoyun.kg',
 				port: '',
 				pathname: '/media/**',
 			},

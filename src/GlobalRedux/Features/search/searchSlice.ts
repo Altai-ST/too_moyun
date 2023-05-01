@@ -7,7 +7,7 @@ export const getAllSearch = createAsyncThunk(
 	async (searchGet: ISearchGet, thunkApi) => {
 		try {
 			const { data } = await axios.get<any>(
-				`http://92.255.111.47/search/?q=${searchGet.q}&page=${searchGet.page}&page_size=${searchGet.pageSize}`
+				`https://api.toomoyun.kg/search/?q=${searchGet.q}&page=${searchGet.page}&page_size=${searchGet.pageSize}`
 			)			
 			return data
 		} catch (err: any) {

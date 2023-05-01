@@ -30,6 +30,7 @@ const Home: FC = () => {
   const size: Size = useReSize();
 
   useEffect(() => {
+    dispatch(getFirstCards({ page: 1, pageSize: 6 }));
     dispatch(getFirstGar({ page: 1, pageSize: 6 }));
     dispatch(getFirstGallery({ page: 1, pageSize: 5 }));
   }, []);
@@ -60,7 +61,7 @@ const Home: FC = () => {
                         <></>
                       ) : size.width >= 1024 ? (
                         <p className="laptop:text-sm mx-20">
-                          {el === null ? "" : el.text}
+                          {el === null ? "" : el.text.length >= 200 ? '...': el.text}
                         </p>
                       ) : (
                         <></>

@@ -12,7 +12,7 @@ export const getCards = createAsyncThunk(
 	async (cardSize: ICardSize, thunkApi) => {
 		try {
 			const { data } = await axios.get<INews>(
-				`http://92.255.111.47/news/?page=${cardSize.page}&page_size=${cardSize.pageSize}`
+				`https://api.toomoyun.kg/news/?page=${cardSize.page}&page_size=${cardSize.pageSize}`
 			)
 			return data
 		} catch (err: any) {
@@ -26,7 +26,7 @@ export const getGallery = createAsyncThunk(
 	async (gallerySize: ICardSize, thunkApi) => {
 		try {
 			const { data } = await axios.get<IGallery>(
-				`http://92.255.111.47/gallery/?page=${gallerySize.page}&page_size=${gallerySize.pageSize}`
+				`https://api.toomoyun.kg/gallery/?page=${gallerySize.page}&page_size=${gallerySize.pageSize}`
 			)
 			return data
 		} catch (err: any) {
@@ -40,7 +40,7 @@ export const getMalymattar = createAsyncThunk(
 	async (malymattarSize: ICardSize, thunkApi) => {
 		try {
 			const { data } = await axios.get<ICardNews>(
-				`http://92.255.111.47/information/?page=${malymattarSize.page}&page_size=${malymattarSize.pageSize}`
+				`https://api.toomoyun.kg/information/?page=${malymattarSize.page}&page_size=${malymattarSize.pageSize}`
 			)
 			return data
 		} catch (err: any) {
@@ -54,7 +54,7 @@ export const getGarPagination = createAsyncThunk(
 	async (cardSize: ICardSize, thunkApi) => {
 		try {
 			const { data } = await axios.get<IGar>(
-				`http://92.255.111.47/ads/?page=${cardSize.page}&page_size=${cardSize.pageSize}`
+				`https://api.toomoyun.kg/ads/?page=${cardSize.page}&page_size=${cardSize.pageSize}`
 			)
 			return data
 		} catch (err: any) {
