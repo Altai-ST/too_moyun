@@ -36,7 +36,7 @@ const Home: FC = () => {
 
   return (
     <>      
-    <div className="bg-gray-300 text-center w-full laptop:pt-10 pt-0">
+    <div className="bg-gray-300 text-center w-full laptop:pt-10 pt-10">
       <h1 className='text-red-600 text-2xl font-bold laptop:mb-10 mb-2'>Жарыялар</h1>
       <div className="flex laptop:justify-center justify-start laptop:mt-10 mt-0  py-10">
         <div className="h-600 laptop:w-1000 w-full ">
