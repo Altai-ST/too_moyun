@@ -11,7 +11,7 @@ const Map: FC<IMapContainer> = ({map}) => {
 			<h1 className='text-4xl font-bold mb-10'>Дареги</h1>
 			<p className='text-2xl mb-32 w-1/2'>{map.description}</p>
 			<div className='w-full flex justify-center'>
-				<Image className='w-855 h-500' src={`http://92.255.111.47${map.photo}`} alt='' width={800} height={500}/>
+				<Image className='w-855 h-500' src={`https://api.toomoyun.kg${map.photo}`} alt='' width={800} height={500}/>
 			</div>
     </div>
 	</Layout>
