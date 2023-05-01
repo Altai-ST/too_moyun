@@ -1,5 +1,5 @@
 import Layout from '@/components/layouts/Layout'
-import Culture from '@/components/screens/culture/Culture'
+import Culture from '@/components/screens/culture/culture'
 import { ICultureData } from '@/interfaces/culture.interface'
 import { CultureService } from '@/services/culture.service'
 import { NextPage } from 'next'
