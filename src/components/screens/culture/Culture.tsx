@@ -13,7 +13,7 @@ const Culture: FC<ICultureData> = ({culture}) => {
 						<Carousel slideInterval={5000}>
 							{culture.images.map((el)=>{
 								return(
-									<Image src={`http://92.255.111.47${el.file}`} width={555} height={500} alt='...' />
+									<Image src={`https://api.toomoyun.kg${el.file}`} width={555} height={500} alt='...' />
 								)
 							})}
 						</Carousel>
