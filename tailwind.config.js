@@ -19,7 +19,8 @@ module.exports = {
         'newsColor':'#9795B5',
         'statisticBg':'#EA526F',
         'footerBg':'#4392F1',
-        'commonInfo':'#BCBACD'
+        'commonInfo':'#BCBACD',
+        'gold-text':'#D0B369'
       },
       width: {
         '1000': '1000px',

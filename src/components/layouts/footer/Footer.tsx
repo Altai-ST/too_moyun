@@ -31,9 +31,11 @@ const Footer: FC = () => {
 					Фотогалерея
 				</Link>
 			</div>
-			<div className='laptop:mt-6 mt-0 laptop:ml-20 ml-0 laptop:self-start self-center laptop:text-start text-center'>
+			<div className='laptop:mt-6 mt-0 laptop:ml-20 ml-0 laptop:self-start self-center laptop:text-start text-center laptop:w-64'>
 				<p className='text-lg'>Айыл өкмөтүбүздүн номуру:</p>
 				<p className='text-lg font-bold'>0755770093</p>
+				<p className='text-lg'>Дареги</p>
+				<p className='text-lg font-bold'>Төө-Моюн өрөөнү Араван району (Кызыл-Кыя) 30 км</p>
 			</div>
 		</footer>
 	)

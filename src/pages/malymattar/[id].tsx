@@ -15,6 +15,7 @@ const MalymattarPage: NextPage<IResult> = (props) => {
 		<h1>{}</h1>
 	</Layout>
 }
+
 export async function getStaticPaths() {
 	const cardNews = await CardNewsService.getCardNews(1,2)
 	return{
